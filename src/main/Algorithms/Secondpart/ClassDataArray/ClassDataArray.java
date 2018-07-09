@@ -1,4 +1,4 @@
-package Algorythms.Secondpart.ClassDataArray;
+package Algorithms.Secondpart.ClassDataArray;
 
 public class ClassDataArray {
     private Person[] a; // Ссылка на массив

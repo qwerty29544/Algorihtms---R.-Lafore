@@ -1,4 +1,4 @@
-package Algorythms.Secondpart.LowArray;
+package Algorithms.Secondpart.LowArray;
 
 public class LowArray {
     private long[] a; // Ссылка на массив a

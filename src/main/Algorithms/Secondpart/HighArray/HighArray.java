@@ -1,4 +1,4 @@
-package Algorythms.Secondpart.HighArray;
+package Algorithms.Secondpart.HighArray;
 
 public class HighArray {
     private long[] a; // Ссылка на массив a

@@ -1,4 +1,4 @@
-package Algorythms.Firstpart.Bank;
+package Algorithms.Firstpart.Bank;
 
 public class BankAccount {
     private double balance; // Баланс счета

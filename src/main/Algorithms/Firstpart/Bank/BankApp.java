@@ -1,4 +1,4 @@
-package Algorythms.Firstpart.Bank;
+package Algorithms.Firstpart.Bank;
 
 public class BankApp {
     public static void main(String[] args)

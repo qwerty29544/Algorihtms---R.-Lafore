@@ -1,4 +1,4 @@
-package Algorythms.Thirdpart.BubbleSort;
+package Algorithms.Thirdpart.BubbleSort;
 
 public class ArrayBub {
     private long[] a; // Ссылка на массив a

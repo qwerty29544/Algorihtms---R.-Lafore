@@ -1,4 +1,4 @@
-package Algorythms.Thirdpart.SelectSort;
+package Algorithms.Thirdpart.SelectSort;
 
 public class ArraySel {
     private long[] a; // Ссылка на массив a

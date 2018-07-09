@@ -1,4 +1,4 @@
-package Algorythms.Secondpart.OrdArray;
+package Algorithms.Secondpart.OrdArray;
 
 public class OrdArrayApp {
     public static void main(String[] args)

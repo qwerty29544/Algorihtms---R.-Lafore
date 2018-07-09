@@ -1,4 +1,4 @@
-package Algorythms.Secondpart.HighArray;
+package Algorithms.Secondpart.HighArray;
 
 public class HighArrayApp {
     public static void main(String[] args)

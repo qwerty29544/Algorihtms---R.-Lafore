@@ -1,11 +1,11 @@
-package Algorythms.Thirdpart.SelectSort;
+package Algorithms.Thirdpart.BubbleSort;
 
-public class SelectSortApp {
+public class BubbleSortApp {
     public static void main(String[] args)
     {
         int maxSize = 100; // Размер массива
-        ArraySel arr; // Ссылка на массив
-        arr = new ArraySel(maxSize); // Создание массива
+        ArrayBub arr; // Ссылка на массив
+        arr = new ArrayBub(maxSize); // Создание массива
         arr.insert(77); // Вставка 10 элементов
         arr.insert(99);
         arr.insert(44);
@@ -17,7 +17,7 @@ public class SelectSortApp {
         arr.insert(66);
         arr.insert(33);
         arr.display(); // Вывод элементов
-        arr.selectionSort(); // Сортировка методом выбора
+        arr.bubbleSort(); // Пузырьковая сортировка элементов
         arr.display(); // Повторный вывод
     }
 }

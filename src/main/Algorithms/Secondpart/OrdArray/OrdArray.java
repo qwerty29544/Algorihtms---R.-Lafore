@@ -1,4 +1,4 @@
-package Algorythms.Secondpart.OrdArray;
+package Algorithms.Secondpart.OrdArray;
 
 public class OrdArray {
     private long[] a; // Ссылка на массив a

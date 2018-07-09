@@ -1,4 +1,4 @@
-package Algorythms.Secondpart.LowArray;
+package Algorithms.Secondpart.LowArray;
 
 public class LowArrayApp {
     public static void main(String[] args)

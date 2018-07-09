@@ -1,4 +1,4 @@
-package Algorythms.Secondpart.ClassDataArray;
+package Algorithms.Secondpart.ClassDataArray;
 
 public class Person {
     private String lastName;
