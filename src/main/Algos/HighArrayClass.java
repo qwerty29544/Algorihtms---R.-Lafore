@@ -4,13 +4,13 @@ public class HighArrayClass {
     private long[] a;
     private int nElems;
 
-    public HighArrayClass(int max)
+    public HighArrayClass(int max) throws IllegalArgumentException
     {
         a = new long[max];
         nElems = 0;
     }
 
-    public boolean find(long searchKey)
+    public boolean find(long searchKey) throws IllegalArgumentException
     {
         int j;
         for(j=0; j<nElems; j++)
@@ -22,13 +22,13 @@ public class HighArrayClass {
             return true;
     }
 
-    public void insert(long value)
+    public void insert(long value) throws IllegalArgumentException
     {
         a[nElems] = value;
         nElems++;
     }
 
-    public boolean delete(long value)
+    public boolean delete(long value) throws IllegalArgumentException
     {
         int j;
         for(j=0; j<nElems; j++)
