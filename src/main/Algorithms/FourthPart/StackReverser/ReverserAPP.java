@@ -16,9 +16,9 @@ public class ReverserAPP {
             input = getString(); // Reading a string from the keyboard
             if( input.equals("") ) // Completion, if [Enter]
                 break;
-            // Создание объекта Reverser
+            // Creating an object Reverser
             Reverser theReverser = new Reverser(input);
-            output = theReverser.doRev(); // Using
+            output = theReverser.doRev(); // Using doRev
             System.out.println("Reversed: " + output);
         }
     }
