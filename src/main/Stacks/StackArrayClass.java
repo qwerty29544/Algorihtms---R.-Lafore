@@ -1,4 +1,4 @@
-package stack;
+package Stacks;
 
 public class StackArrayClass {
     private int maxSize; // The size of the array
