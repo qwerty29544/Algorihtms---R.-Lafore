@@ -1,12 +1,12 @@
-package Algos;
+package ArrayClasses;
 
 public class HighArrayClass {
-    private long[] a;
+    private long[] array;
     private int nElems;
 
     public HighArrayClass(int max) throws IllegalArgumentException
     {
-        a = new long[max];
+        array = new long[max];
         nElems = 0;
     }
 
@@ -14,7 +14,7 @@ public class HighArrayClass {
     {
         int j;
         for(j=0; j<nElems; j++)
-            if(a[j] == searchKey)
+            if(array[j] == searchKey)
                 break;
         if(j == nElems)
             return false;
@@ -24,7 +24,7 @@ public class HighArrayClass {
 
     public void insert(long value) throws IllegalArgumentException
     {
-        a[nElems] = value;
+        array[nElems] = value;
         nElems++;
     }
 
@@ -32,14 +32,14 @@ public class HighArrayClass {
     {
         int j;
         for(j=0; j<nElems; j++)
-            if( value == a[j] )
+            if( value == array[j] )
                 break;
         if(j==nElems)
             return false;
         else
         {
             for(int k=j; k<nElems; k++)
-                a[k] = a[k+1];
+                array[k] = array[k+1];
             nElems--;
             return true;
         }
@@ -48,7 +48,15 @@ public class HighArrayClass {
     public void display()
     {
         for(int j=0; j<nElems; j++)
-            System.out.print(a[j] + " ");
+            System.out.print(array[j] + " ");
         System.out.println("");
+    }
+
+    public long[] getArray() {
+        return array;
+    }
+
+    public int getnElems() {
+        return nElems;
     }
 }

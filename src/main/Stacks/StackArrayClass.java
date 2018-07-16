@@ -49,4 +49,16 @@ public class StackArrayClass {
     {
         return (top == maxSize-1);
     }
+
+    public int getMaxSize() { // Getter
+        return maxSize;
+    }
+
+    public long[] getStackArray() { // Getter
+        return stackArray;
+    }
+
+    public int getTop() { // Getter
+        return top;
+    }
 }

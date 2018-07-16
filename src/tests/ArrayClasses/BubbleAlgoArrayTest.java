@@ -1,18 +1,19 @@
-package Algos;
+package ArrayClasses;
 
+import SortAlgos.BubbleAlgoArray;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class BubbleAlgoTest {
+public class BubbleAlgoArrayTest {
 
-    BubbleAlgo bubble;
+    BubbleAlgoArray bubble;
 
     @Before
     public void setUp() throws Exception {
-        this.bubble = new BubbleAlgo(10);
+        this.bubble = new BubbleAlgoArray(10);
     }
 
     @After

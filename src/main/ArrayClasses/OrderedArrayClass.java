@@ -1,14 +1,14 @@
-package Algos;
+package ArrayClasses;
 
 public class OrderedArrayClass {
-    private long[] a; // Array main data recording type
+    private long[] array; // Array main data recording type
     private int nElems; // Array size
 
     public OrderedArrayClass(int max) throws IllegalArgumentException
     {
         try
         {
-            a = new long[max];
+            array = new long[max];
             nElems = 0;
         }
         catch (NegativeArraySizeException a)
@@ -28,13 +28,13 @@ public class OrderedArrayClass {
         while(true)
         {
             curIn = (lowerBound + upperBound ) / 2;
-            if(a[curIn]==searchKey)
+            if(array[curIn]==searchKey)
                 return curIn;
             else if(lowerBound > upperBound)
                 return nElems;
             else
             {
-                if(a[curIn] < searchKey)
+                if(array[curIn] < searchKey)
                     lowerBound = curIn + 1;
                 else
                     upperBound = curIn - 1;
@@ -47,11 +47,11 @@ public class OrderedArrayClass {
         try {
             int j;
             for (j = 0; j < nElems; j++)
-                if (a[j] > value)
+                if (array[j] > value)
                     break;
             for (int k = nElems; k > j; k--)
-                a[k] = a[k - 1];
-            a[j] = value;
+                array[k] = array[k - 1];
+            array[j] = value;
             nElems++;
         }
         catch (ArrayIndexOutOfBoundsException e){
@@ -70,7 +70,7 @@ public class OrderedArrayClass {
         else
         {
             for(int k=j; k<nElems; k++)
-                a[k] = a[k+1];
+                array[k] = array[k+1];
             nElems--;
             return true;
         }
@@ -79,7 +79,15 @@ public class OrderedArrayClass {
     public void display()
     {
         for(int j=0; j<nElems; j++)
-            System.out.print(a[j] + " ");
+            System.out.print(array[j] + " ");
         System.out.println("");
+    }
+
+    public long[] getArray() {
+        return array;
+    }
+
+    public int getnElems() {
+        return nElems;
     }
 }

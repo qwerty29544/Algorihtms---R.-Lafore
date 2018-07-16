@@ -1,12 +1,12 @@
-package Algos;
+package ArrayClasses;
 
-public class LowArray {
-    private long[] a;
+public class LowArrayClass {
+    private long[] array;
 
-    public LowArray(int size) throws IllegalArgumentException
+    public LowArrayClass(int size) throws IllegalArgumentException
     {
         try {
-            a = new long[size];
+            array = new long[size];
         }
         catch (NegativeArraySizeException a)
         {
@@ -17,7 +17,7 @@ public class LowArray {
     public void setElem(int index, long value) throws IllegalArgumentException
     {
         try{
-        a[index] = value;
+        array[index] = value;
         }
         catch (ArrayIndexOutOfBoundsException e){
             System.out.print("Array index out of bounds, please try to delete some recordings");
@@ -28,5 +28,9 @@ public class LowArray {
     }
 
     public long getElem(int index) throws IllegalArgumentException
-    { return a[index]; }
+    { return array[index]; }
+
+    public long[] getArray() {
+        return array;
+    }
 }

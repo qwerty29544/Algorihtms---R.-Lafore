@@ -1,4 +1,4 @@
-package Algos;
+package ArrayClasses;
 
 public class DataClass {
     private String lastName;
@@ -28,4 +28,13 @@ public class DataClass {
 
     public String getLast()
     { return lastName; }
+
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public int getAge() {
+        return age;
+    }
 }

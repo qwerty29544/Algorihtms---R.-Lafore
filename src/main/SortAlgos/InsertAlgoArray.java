@@ -1,13 +1,13 @@
-package Algos;
+package SortAlgos;
 
-public class InsertAlgo {
-    private long[] a; // Reference to array a
+public class InsertAlgoArray {
+    private long[] array; // Reference to array array
     private int nElems; // Number of data items
 
-    public InsertAlgo(int max) throws IllegalArgumentException // Constructor
+    public InsertAlgoArray(int max) throws IllegalArgumentException // Constructor
     {
         try {
-            a = new long[max]; // Creating an array
+            array = new long[max]; // Creating an array
             nElems = 0; // No items yet
         }
         catch (NegativeArraySizeException a)
@@ -19,7 +19,7 @@ public class InsertAlgo {
     public void insert(long value) throws IllegalArgumentException // Insert an element into an array
     {
         try {
-            a[nElems] = value; // The actual insertion
+            array[nElems] = value; // The actual insertion
             nElems++; // Increase in size
         }
         catch (ArrayIndexOutOfBoundsException e){
@@ -33,23 +33,31 @@ public class InsertAlgo {
     public void display() // Output the contents of the array
     {
         for(int j=0; j<nElems; j++) // For each element
-            System.out.print(a[j] + " "); // Output
+            System.out.print(array[j] + " "); // Output
         System.out.println("");
     }
 
-    public void insertionSort()
+    public void insertionSort() // Sort method
     {
         int in, out;
         for(out=1; out<nElems; out++) // out - separating marker
         {
-            long temp = a[out]; // Copy starred item
+            long temp = array[out]; // Copy starred item
             in = out; // Start moving with out
-            while(in>0 && a[in-1] >= temp) // Until the smaller element is found
+            while(in>0 && array[in-1] >= temp) // Until the smaller element is found
             {
-                a[in] = a[in-1]; // Shift the item to the right
+                array[in] = array[in-1]; // Shift the item to the right
                 --in; // Move one position to the left
             }
-            a[in] = temp; // Insert starred item
+            array[in] = temp; // Insert starred item
         }
     }
+
+    public long[] getArray() {
+        return array;
+    } // Getter
+
+    public int getnElems() {
+        return nElems;
+    } // Getter
 }

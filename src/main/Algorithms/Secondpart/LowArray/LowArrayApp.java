@@ -4,7 +4,7 @@ public class LowArrayApp {
     public static void main(String[] args)
     {
         LowArray arr; // Ссылка
-        arr = new LowArray(100); // Создание объекта LowArray
+        arr = new LowArray(100); // Создание объекта LowArrayClass
         int nElems = 0; // Количество элементов в массиве
         int j; // Переменная цикла
         arr.setElem(0, 77); // Вставка 10 элементов

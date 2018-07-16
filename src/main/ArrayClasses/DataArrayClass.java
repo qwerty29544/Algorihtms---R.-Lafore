@@ -1,14 +1,14 @@
-package Algos;
+package ArrayClasses;
 
 public class DataArrayClass {
-    private DataClass[] a;
+    private DataClass[] classArray;
     private int nElems;
 
     public DataArrayClass(int max) throws IllegalArgumentException
     {
         try
         {
-            a = new DataClass[max];
+            classArray = new DataClass[max];
             nElems = 0;
         }
         catch (NegativeArraySizeException a)
@@ -21,18 +21,18 @@ public class DataArrayClass {
     {
         int j;
         for(j=0; j<nElems; j++)
-            if( a[j].getLast().equals(searchName) )
+            if( classArray[j].getLast().equals(searchName) )
                 break;
         if(j == nElems)
             return null;
         else
-            return a[j];
+            return classArray[j];
     } // end find()
 
     public void insert(String last, String first, int age) throws IllegalArgumentException
     {
         try {
-            a[nElems] = new DataClass(last, first, age);
+            classArray[nElems] = new DataClass(last, first, age);
             nElems++;
         }
         catch (ArrayIndexOutOfBoundsException e){
@@ -47,14 +47,14 @@ public class DataArrayClass {
     {
         int j;
         for(j=0; j<nElems; j++)
-            if( a[j].getLast().equals(searchName) )
+            if( classArray[j].getLast().equals(searchName) )
                 break;
         if(j==nElems)
             return false;
         else
         {
             for(int k=j; k<nElems; k++)
-                a[k] = a[k+1];
+                classArray[k] = classArray[k+1];
             nElems--;
             return true;
         }
@@ -63,6 +63,14 @@ public class DataArrayClass {
     public void displayA()
     {
         for(int j=0; j<nElems; j++)
-            a[j].displayPerson();
+            classArray[j].displayPerson();
+    }
+
+    public DataClass[] getClassArray() {
+        return classArray;
+    }
+
+    public int getnElems() {
+        return nElems;
     }
 }
