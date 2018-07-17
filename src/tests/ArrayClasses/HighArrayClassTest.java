@@ -53,15 +53,20 @@ public class HighArrayClassTest {
 
     @Test
     public void insert() throws Exception {
+        assertEquals(this.highArray.getnElems(),3);
         this.highArray.insert(765);
+        assertEquals(this.highArray.getnElems(),4);
         assertEquals(this.highArray.find(765),true);
     }
 
     @Test
     public void delete() throws Exception {
+        assertEquals(this.highArray.getnElems(),3);
         this.highArray.delete(20);
+        assertEquals(this.highArray.getnElems(),2);
         assertEquals(this.highArray.find(20),false);
         this.highArray.delete(20);
+        assertEquals(this.highArray.getnElems(),2);
     }
 
     @Test

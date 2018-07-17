@@ -53,14 +53,18 @@ public class OrderedArrayClassTest {
 
     @Test
     public void insert() throws Exception{
+        assertEquals(this.orderedArray.getnElems(),4);
         this.orderedArray.insert(1000);
+        assertEquals(this.orderedArray.getnElems(),5);
         assertEquals(this.orderedArray.find(1000),3);
     }
 
     @Test
     public void delete() throws Exception {
+        assertEquals(this.orderedArray.getnElems(),4);
         assertEquals(this.orderedArray.find(20178),3);
         this.orderedArray.delete(10);
+        assertEquals(this.orderedArray.getnElems(),3);
         assertEquals(this.orderedArray.find(20178),2);
     }
 

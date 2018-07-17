@@ -41,7 +41,9 @@ public class DataArrayClassTest {
     @Test
     public void insert() throws Exception {
         this.dataArrayClass.insert("Legend","Genry",965);
+        assertEquals(this.dataArrayClass.getnElems(),3);
         this.dataArrayClass.insert("Chase","Cory",17);
+        assertEquals(this.dataArrayClass.getnElems(),4);
         assertNotNull(this.dataArrayClass.find("Chase"));
         assertNotNull(this.dataArrayClass.find("Legend"));
     }
@@ -57,6 +59,7 @@ public class DataArrayClassTest {
     public void delete() throws Exception {
         assertNotNull(this.dataArrayClass.find("Latina"));
         this.dataArrayClass.delete("Latina");
+        assertEquals(this.dataArrayClass.getnElems(),1);
         assertNull(this.dataArrayClass.find("Latina"));
     }
 
