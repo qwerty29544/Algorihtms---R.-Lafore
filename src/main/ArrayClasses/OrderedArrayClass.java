@@ -4,17 +4,10 @@ public class OrderedArrayClass {
     private long[] array; // Array main data recording type
     private int nElems; // Array size
 
-    public OrderedArrayClass(int max) throws IllegalArgumentException
+    public OrderedArrayClass(int max) throws IllegalArgumentException, NegativeArraySizeException
     {
-        try
-        {
-            array = new long[max];
-            nElems = 0;
-        }
-        catch (NegativeArraySizeException a)
-        {
-            System.out.print("Incorrect size, try to record an positive number");
-        }
+        array = new long[max];
+        nElems = 0;
     }
 
     public int size()
@@ -42,24 +35,16 @@ public class OrderedArrayClass {
         }
     }
 
-    public void insert(long value) throws IllegalArgumentException
+    public void insert(long value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException, ArrayStoreException
     {
-        try {
-            int j;
-            for (j = 0; j < nElems; j++)
-                if (array[j] > value)
-                    break;
-            for (int k = nElems; k > j; k--)
-                array[k] = array[k - 1];
-            array[j] = value;
-            nElems++;
-        }
-        catch (ArrayIndexOutOfBoundsException e){
-            System.out.print("Array index out of bounds, please try to delete some recordings");
-        }
-        catch (ArrayStoreException e1){
-            System.out.print("The entry you want to register has the wrong type");
-        }
+        int j;
+        for (j = 0; j < nElems; j++)
+            if (array[j] > value)
+                break;
+        for (int k = nElems; k > j; k--)
+            array[k] = array[k - 1];
+        array[j] = value;
+        nElems++;
     }
 
     public boolean delete(long value) throws IllegalArgumentException

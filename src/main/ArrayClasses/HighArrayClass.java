@@ -4,7 +4,7 @@ public class HighArrayClass {
     private long[] array;
     private int nElems;
 
-    public HighArrayClass(int max) throws IllegalArgumentException
+    public HighArrayClass(int max) throws IllegalArgumentException, NegativeArraySizeException
     {
         array = new long[max];
         nElems = 0;
@@ -22,7 +22,7 @@ public class HighArrayClass {
             return true;
     }
 
-    public void insert(long value) throws IllegalArgumentException
+    public void insert(long value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException, ArrayStoreException
     {
         array[nElems] = value;
         nElems++;
