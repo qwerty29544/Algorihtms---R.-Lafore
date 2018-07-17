@@ -6,33 +6,18 @@ public class DataArraySelSort {
     private DataClass[] classArray; // Reference to array classArray
     private int nElems; // Number of data items
 
-    public DataArraySelSort(int max) throws IllegalArgumentException // Constructor
+    public DataArraySelSort(int max) throws IllegalArgumentException, NegativeArraySizeException // Constructor
     {
-        try {
-            classArray = new DataClass[max]; // Create an array
-            nElems = 0; // No items yet
-        }
-        catch (NegativeArraySizeException a1)
-        {
-            System.out.print("Incorrect size, try to record an positive number");
-        }
+        classArray = new DataClass[max]; // Create an array
+        nElems = 0; // No items yet
     }
 
     // Enable writing to an array
-    public void insert(String last, String first, int age) throws IllegalArgumentException
+    public void insert(String last, String first, int age) throws IllegalArgumentException, ArrayIndexOutOfBoundsException, ArrayStoreException
     {
-        try {
-            classArray[nElems] = new DataClass(last, first, age);
-            nElems++; // Increase the size
-        }
-        catch (ArrayIndexOutOfBoundsException e3)
-        {
-            System.out.print("Array index out of bounds, please try to delete some recordings");
-        }
-        catch (ArrayStoreException e4)
-        {
-            System.out.print("The entry you want to register has the wrong type");
-        }
+
+        classArray[nElems] = new DataClass(last, first, age);
+        nElems++; // Increase the size
     }
 
     public void display() // Output the contents of the array

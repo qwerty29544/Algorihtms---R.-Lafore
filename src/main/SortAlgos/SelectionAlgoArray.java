@@ -4,30 +4,17 @@ public class SelectionAlgoArray {
     private long[] array; // Link to array array
     private int nElems; // Number of Data Elements
 
-    public SelectionAlgoArray(int max) throws IllegalArgumentException // Constructor
+    public SelectionAlgoArray(int max) throws IllegalArgumentException, NegativeArraySizeException // Constructor
     {
-        try {
-            array = new long[max]; // Creating an array
-            nElems = 0; // No items yet
-        }
-        catch (NegativeArraySizeException a)
-        {
-            System.out.print("Incorrect size, try to record an positive number");
-        }
+        array = new long[max]; // Creating an array
+        nElems = 0; // No items yet
     }
 
-    public void insert(long value) throws IllegalArgumentException // Inserting an element into an array
+    public void insert(long value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException, ArrayStoreException // Inserting an element into an array
     {
-        try {
-            array[nElems] = value; // The actual insertion
-            nElems++; // Increase in size
-        }
-        catch (ArrayIndexOutOfBoundsException e){
-            System.out.print("Array index out of bounds, please try to delete some recordings");
-        }
-        catch (ArrayStoreException e1){
-            System.out.print("The entry you want to register has the wrong type");
-        }
+
+        array[nElems] = value; // The actual insertion
+        nElems++; // Increase in size
     }
 
     public void display() // Outputting the contents of an array
@@ -50,7 +37,7 @@ public class SelectionAlgoArray {
         }
     }
 
-    private void swap(int one, int two) throws IllegalArgumentException
+    private void swap(int one, int two) throws IllegalArgumentException, ArrayIndexOutOfBoundsException
     {
         long temp = array[one];
         array[one] = array[two];

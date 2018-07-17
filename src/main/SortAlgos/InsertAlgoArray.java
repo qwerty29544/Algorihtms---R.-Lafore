@@ -4,30 +4,16 @@ public class InsertAlgoArray {
     private long[] array; // Reference to array array
     private int nElems; // Number of data items
 
-    public InsertAlgoArray(int max) throws IllegalArgumentException // Constructor
+    public InsertAlgoArray(int max) throws IllegalArgumentException, NegativeArraySizeException // Constructor
     {
-        try {
-            array = new long[max]; // Creating an array
-            nElems = 0; // No items yet
-        }
-        catch (NegativeArraySizeException a)
-        {
-            System.out.print("Incorrect size, try to record an positive number");
-        }
+        array = new long[max]; // Creating an array
+        nElems = 0; // No items yet
     }
 
-    public void insert(long value) throws IllegalArgumentException // Insert an element into an array
+    public void insert(long value) throws IllegalArgumentException, ArrayStoreException, ArrayIndexOutOfBoundsException // Insert an element into an array
     {
-        try {
-            array[nElems] = value; // The actual insertion
-            nElems++; // Increase in size
-        }
-        catch (ArrayIndexOutOfBoundsException e){
-            System.out.print("Array index out of bounds, please try to delete some recordings");
-        }
-        catch (ArrayStoreException e1){
-            System.out.print("The entry you want to register has the wrong type");
-        }
+        array[nElems] = value; // The actual insertion
+        nElems++; // Increase in size
     }
 
     public void display() // Output the contents of the array
