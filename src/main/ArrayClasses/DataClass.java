@@ -5,18 +5,11 @@ public class DataClass {
     private String firstName;
     private int age;
 
-    public DataClass(String last, String first, int a) throws IllegalArgumentException
+    public DataClass(String last, String first, int a) throws IllegalArgumentException,ArrayStoreException
     {
-        try
-        {
-            lastName = last;
-            firstName = first;
-            age = a;
-        }
-        catch (ArrayStoreException e2)
-        {
-            System.out.print("The entry you want to register has the wrong type");
-        }
+        lastName = last;
+        firstName = first;
+        age = Math.abs(a);
     }
 
     public void displayPerson()

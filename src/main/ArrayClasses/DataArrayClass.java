@@ -4,17 +4,11 @@ public class DataArrayClass {
     private DataClass[] classArray;
     private int nElems;
 
-    public DataArrayClass(int max) throws IllegalArgumentException
+    public DataArrayClass(int max) throws IllegalArgumentException, NegativeArraySizeException
     {
-        try
-        {
-            classArray = new DataClass[max];
-            nElems = 0;
-        }
-        catch (NegativeArraySizeException a)
-        {
-            System.out.print("Incorrect size, try to record an positive number");
-        }
+
+        classArray = new DataClass[max];
+        nElems = 0;
     }
 
     public DataClass find(String searchName) throws IllegalArgumentException
@@ -29,18 +23,10 @@ public class DataArrayClass {
             return classArray[j];
     } // end find()
 
-    public void insert(String last, String first, int age) throws IllegalArgumentException
+    public void insert(String last, String first, int age) throws IllegalArgumentException, ArrayStoreException, ArrayIndexOutOfBoundsException
     {
-        try {
             classArray[nElems] = new DataClass(last, first, age);
             nElems++;
-        }
-        catch (ArrayIndexOutOfBoundsException e){
-            System.out.print("Array index out of bounds, please try to delete some recordings");
-        }
-        catch (ArrayStoreException e1){
-            System.out.print("The entry you want to register has the wrong type");
-        }
     }
 
     public boolean delete(String searchName) throws IllegalArgumentException

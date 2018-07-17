@@ -1,4 +1,4 @@
-package ArrayClasses;
+package SortAlgos;
 
 import SortAlgos.BubbleAlgoArray;
 import org.junit.After;
@@ -29,6 +29,14 @@ public class BubbleAlgoArrayTest {
 
     @Test
     public void bubbleSort() throws Exception {
+    }
+
+    @Test
+    public void getArray() throws Exception {
+    }
+
+    @Test
+    public void getnElems() throws Exception {
     }
 
 }

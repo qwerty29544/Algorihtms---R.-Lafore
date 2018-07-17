@@ -27,6 +27,11 @@ public class OrderedArrayClassTest {
         this.orderedArrayException = null;
     }
 
+    @Test(expected = NegativeArraySizeException.class)
+    public void excepionPoiter(){
+        this.orderedArrayClassException = new OrderedArrayClass(-19);
+    }
+
     @Test
     public void size() throws Exception {
         assertEquals(this.orderedArray.size(), 4);
@@ -39,27 +44,41 @@ public class OrderedArrayClassTest {
         assertNotSame(this.orderedArray.find(20178),1);
     }
 
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    public void insertException() {
+        this.orderedArray.insert(1000);
+        this.orderedArray.insert(1000);
+        this.orderedArray.insert(1000);
+    }
+
     @Test
-    public void insert() throws Exception {
+    public void insert() throws Exception{
         this.orderedArray.insert(1000);
-        this.orderedArray.insert(1000);
-        this.orderedArray.insert(1000);
+        assertEquals(this.orderedArray.find(1000),3);
     }
 
     @Test
     public void delete() throws Exception {
+        assertEquals(this.orderedArray.find(20178),3);
+        this.orderedArray.delete(10);
+        assertEquals(this.orderedArray.find(20178),2);
     }
 
     @Test
     public void display() throws Exception {
+        this.orderedArray.display();
     }
 
     @Test
     public void getArray() throws Exception {
+        assertEquals(this.orderedArray.getArray()[2],99);
+        assertNotSame(this.orderedArray.getArray()[0],20178);
     }
 
     @Test
     public void getnElems() throws Exception {
+        assertEquals(this.orderedArray.getnElems(),4);
+        assertNotSame(this.orderedArray.getnElems(),2);
     }
 
     @Ignore("Message for ignored test")
