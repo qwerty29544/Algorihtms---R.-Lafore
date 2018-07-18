@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class BubbleAlgoArrayTest {
 
-    BubbleAlgoArray bubble;
+    BubbleAlgoArray bubble, bubbleAlgoArrayException;
 
     @Before
     public void setUp() throws Exception {
@@ -28,7 +28,8 @@ public class BubbleAlgoArrayTest {
 
     @Test
     public void insert() throws Exception {
-        assertNull(this.bubble.getArray()[5]);
+        assertEquals(this.bubble.getArray()[6],0);
+        assertEquals(this.bubble.getArray()[5],0);
         assertEquals(this.bubble.getArray()[0], 10);
         assertEquals(this.bubble.getnElems(),5);
         this.bubble.insert(19);
@@ -47,11 +48,24 @@ public class BubbleAlgoArrayTest {
 
     @Test
     public void getArray() throws Exception {
-
+        assertNotNull(this.bubble.getArray());
     }
 
     @Test
     public void getnElems() throws Exception {
+        assertNotNull(this.bubble.getnElems());
+        assertEquals(this.bubble.getnElems(),5);
     }
 
+    @Test(expected = NegativeArraySizeException.class)
+    public void setUpException(){
+        bubbleAlgoArrayException = new BubbleAlgoArray(-12);
+    }
+
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    public void insertException() {
+        for (int i = 14; i<=20; i++){
+            this.bubble.insert(i);
+        }
+    }
 }

@@ -6,25 +6,25 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class QueueArrayClassTest{
+public class QueueVer2Test {
 
-    QueueArrayClass queueArray, queueArrayClassException, emptyQueue, fullQueue;
+    QueueVer2  queueArray, queueArrayClassException, emptyQueue, fullQueue;
 
     @Before
     public void setUp() throws Exception {
-        this.queueArray = new QueueArrayClass(7);
+        this.queueArray = new QueueVer2(7);
         this.queueArray.insert(12);
         this.queueArray.insert(20);
         this.queueArray.insert(0);
         this.queueArray.insert(-10);
-        this.emptyQueue = new QueueArrayClass(10);
-        this.fullQueue = new QueueArrayClass(3);
+        this.emptyQueue = new QueueVer2(10);
+        this.fullQueue = new QueueVer2(3);
         this.fullQueue.insert(12);
     }
 
     @Test(expected = NegativeArraySizeException.class)
     public void constructorException(){
-        this.queueArrayClassException = new QueueArrayClass(-10);
+        this.queueArrayClassException = new QueueVer2(-10);
     }
 
     @After
@@ -37,33 +37,33 @@ public class QueueArrayClassTest{
     @Test
     public void insert() throws Exception {
         assertEquals(this.queueArray.getRear(),3);
-        assertEquals(this.queueArray.peekFront(),12);
+        assertEquals(this.queueArray.peek(),12);
         this.queueArray.insert(20);
         assertEquals(this.queueArray.getRear(),4);
-        assertEquals(this.queueArray.peekFront(),12);
+        assertEquals(this.queueArray.peek(),12);
         this.queueArray.insert(20);
         this.queueArray.insert(20);
         this.queueArray.insert(20);
         this.queueArray.insert(20);
-        assertEquals(this.queueArray.getRear(),1);
+        assertEquals(this.queueArray.getRear(),0);
     }
 
     @Test
     public void remove() throws Exception {
-        assertEquals(this.queueArray.peekFront(),12);
+        assertEquals(this.queueArray.peek(),12);
         assertEquals(this.queueArray.getRear(),3);
         assertEquals(this.queueArray.getFront(),0);
         this.queueArray.remove();
-        assertEquals(this.queueArray.peekFront(),20);
+        assertEquals(this.queueArray.peek(),20);
         assertEquals(this.queueArray.getFront(),1);
         assertEquals(this.queueArray.getRear(),3);
     }
 
     @Test
     public void peekFront() throws Exception {
-        assertEquals(this.queueArray.peekFront(),12);
+        assertEquals(this.queueArray.peek(),12);
         this.queueArray.remove();
-        assertEquals(this.queueArray.peekFront(),20);
+        assertEquals(this.queueArray.peek(),20);
     }
 
     @Test
@@ -78,7 +78,7 @@ public class QueueArrayClassTest{
     @Test
     public void isFull() throws Exception {
         assertEquals(this.fullQueue.isFull(),false);
-        assertEquals(this.fullQueue.getMaxSize(),3);
+        assertEquals(this.fullQueue.getMaxSize(),4);
         assertEquals(this.fullQueue.size(),1);
         this.fullQueue.insert(21);
         assertEquals(this.fullQueue.isFull(),false);
@@ -96,8 +96,8 @@ public class QueueArrayClassTest{
 
     @Test
     public void getMaxSize() throws Exception {
-        assertEquals(this.queueArray.getMaxSize(),7);
-        assertEquals(this.fullQueue.getMaxSize(),3);
+        assertEquals(this.queueArray.getMaxSize(),8);
+        assertEquals(this.fullQueue.getMaxSize(),4);
     }
 
     @Test

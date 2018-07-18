@@ -5,29 +5,16 @@ public class StackArrayClass {
     private long[] stackArray;
     private int top; // The top of the stack
 
-    public StackArrayClass(int s)  throws IllegalArgumentException // Constructor
+    public StackArrayClass(int s)  throws IllegalArgumentException, NegativeArraySizeException // Constructor
     {
-        try {
-            maxSize = s; // Determining the size of the stack
-            stackArray = new long[maxSize]; // Creating an array
-            top = -1; // No items yet
-        }
-        catch (NegativeArraySizeException a3){
-            System.out.print("Incorrect size, try to record an positive number");
-        }
+        maxSize = s; // Determining the size of the stack
+        stackArray = new long[maxSize]; // Creating an array
+        top = -1; // No items yet
     }
 
-    public void push(long j)  throws IllegalArgumentException // Place an element on top of the stack
+    public void push(long j)  throws IllegalArgumentException, ArrayIndexOutOfBoundsException, ArrayStoreException // Place an element on top of the stack
     {
-        try {
-            stackArray[++top] = j; // Increase top, insert an element
-        }
-        catch (ArrayIndexOutOfBoundsException e5){
-            System.out.print("Stack is full, please try to delete some recordings");
-        }
-        catch (ArrayStoreException e8){
-            System.out.print("The entry you want to register has the wrong type");
-        }
+        stackArray[++top] = j; // Increase top, insert an element
     }
 
     public long pop() // Extracting an element from the top of the stack
