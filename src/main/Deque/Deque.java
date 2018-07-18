@@ -16,7 +16,7 @@ public class Deque {
         nItems = 0;
     }
 
-    public void insertLeft(long j) throws IllegalArgumentException// Insert an item at the end of the queue
+    public void insertRight(long j) throws IllegalArgumentException// Insert an item at the end of the queue
     {
         if(rear == maxSize-1) // Cyclic transfer
             rear = -1;
@@ -24,7 +24,7 @@ public class Deque {
         nItems++; // Increase the number of elements
     }
 
-    public long removeRight() // Extracting an element at the beginning of the queue
+    public long removeLeft() // Extracting an element at the beginning of the queue
     {
         long temp = queArray[front++]; // Sample and enlarge front
         if(front == maxSize) // Cyclic transfer
@@ -33,7 +33,7 @@ public class Deque {
         return temp;
     }
 
-    public void insertRight(long j) throws  IllegalArgumentException // Insert an item at the beginning of the queue
+    public void insertLeft(long j) throws  IllegalArgumentException // Insert an item at the beginning of the queue
     {
         if(front == 0) // Cyclic transfer
             front = maxSize;
@@ -41,7 +41,7 @@ public class Deque {
         nItems++; // Increase the number of elements
     }
 
-    public long removeLeft() // Extracting an element at the end of the queue
+    public long removeRight() // Extracting an element at the end of the queue
     {
         long temp = queArray[rear--]; // Sample and enlarge rear
         if(rear == -1) // Cyclic transfer
@@ -50,9 +50,14 @@ public class Deque {
         return temp;
     }
 
-    public long peekFront() // Reading an element at the beginning of a queue
+    public long peekFront() throws ArrayIndexOutOfBoundsException // Reading an element at the beginning of a queue
     {
         return queArray[front];
+    }
+
+    public long peekRear() throws ArrayIndexOutOfBoundsException
+    {
+        return queArray[rear];
     }
 
     public boolean isEmpty() // true if the queue is empty
