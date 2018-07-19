@@ -21,7 +21,7 @@ public class QueueVer2 {
         queArray[++rear] = j;
     }
 
-    public long remove() // Extracting an element at the beginning of the queue
+    public long remove() throws NullPointerException // Extracting an element at the beginning of the queue
     {
         long temp = queArray[front++];
         if(front == maxSize)
@@ -29,22 +29,22 @@ public class QueueVer2 {
         return temp;
     }
 
-    public long peek() // Reading an element at the beginning of a queue
+    public long peek() throws NullPointerException// Reading an element at the beginning of a queue
     {
         return queArray[front];
     }
 
-    public boolean isEmpty() // true if the queue is empty
+    public boolean isEmpty() throws NullPointerException // true if the queue is empty
     {
         return ( rear+1==front || (front+maxSize-1==rear) );
     }
 
-    public boolean isFull() // true if the queue is full
+    public boolean isFull() throws NullPointerException // true if the queue is full
     {
         return ( rear+2==front || (front+maxSize-2==rear) );
     }
 
-    public int size() // (assumes queue not empty) Getter w/o nElems variable
+    public int size() throws NullPointerException // (assumes queue not empty) Getter w/o nElems variable
     {
         if(rear >= front) // Continuous Sequence
             return rear-front+1;
@@ -52,19 +52,19 @@ public class QueueVer2 {
             return (maxSize-front) + (rear+1);
     }
 
-    public int getMaxSize() { // Getter of the max size of an array
+    public int getMaxSize() throws NullPointerException { // Getter of the max size of an array
         return maxSize;
     } // Getter
 
-    public long[] getQueArray() { // getter of an array itself
+    public long[] getQueArray() throws NullPointerException { // getter of an array itself
         return queArray;
     } // Getter
 
-    public int getFront() { // getter of the front mark in Que
+    public int getFront() throws NullPointerException { // getter of the front mark in Que
         return front;
     } // Getter
 
-    public int getRear() { // getter of the rear mark in Que
+    public int getRear() throws NullPointerException { // getter of the rear mark in Que
         return rear;
     } // Getter
 }

@@ -111,4 +111,48 @@ public class PriorityQueueArrayClassTest {
         assertEquals(this.priorityQueueArray.getnItems(),0);
     }
 
+
+    @Test(expected = NullPointerException.class)
+    public void peekMinException() {
+        this.priorityQueueArray = null;
+        this.priorityQueueArray.peekMin();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getnItemsException() {
+        this.priorityQueueArray = null;
+        this.priorityQueueArray.getnItems();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getQueArrayException() {
+        this.priorityQueueArray = null;
+        this.priorityQueueArray.getQueArray();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getMaxSizeException() {
+        this.priorityQueueArray = null;
+        this.priorityQueueArray.getMaxSize();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void isFullException() {
+        this.priorityQueueArray = null;
+        this.priorityQueueArray.isFull();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void isEmptyException() {
+        this.priorityQueueArray = null;
+        this.priorityQueueArray.isEmpty();
+    }
+
+
+    @Test(expected = NullPointerException.class)
+    public void removeException() {
+        this.priorityQueueArray = null;
+        this.priorityQueueArray.remove();
+    }
+
 }

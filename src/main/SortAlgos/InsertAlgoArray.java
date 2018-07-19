@@ -16,14 +16,14 @@ public class InsertAlgoArray {
         nElems++; // Increase in size
     }
 
-    public void display() // Output the contents of the array
+    public void display() throws NullPointerException // Output the contents of the array
     {
         for(int j=0; j<nElems; j++) // For each element
             System.out.print(array[j] + " "); // Output
         System.out.println("");
     }
 
-    public void insertionSort() // Sort method
+    public void insertionSort() throws NullPointerException // Sort method
     {
         int in, out;
         for(out=1; out<nElems; out++) // out - separating marker
@@ -39,11 +39,11 @@ public class InsertAlgoArray {
         }
     }
 
-    public long[] getArray() {
+    public long[] getArray() throws NullPointerException {
         return array;
     } // Getter
 
-    public int getnElems() {
+    public int getnElems() throws NullPointerException {
         return nElems;
     } // Getter
 }

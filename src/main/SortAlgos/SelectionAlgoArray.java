@@ -17,14 +17,14 @@ public class SelectionAlgoArray {
         nElems++; // Increase in size
     }
 
-    public void display() // Outputting the contents of an array
+    public void display() throws NullPointerException // Outputting the contents of an array
     {
         for(int j=0; j<nElems; j++) // For each item
             System.out.print(array[j] + " "); // Actual display
         System.out.println("");
     }
 
-    public void selectionSort()
+    public void selectionSort() throws NullPointerException
     {
         int out, in, min;
         for(out=0; out<nElems-1; out++) // External cycle
@@ -44,11 +44,11 @@ public class SelectionAlgoArray {
         array[two] = temp;
     }
 
-    public long[] getArray() { // Getter
+    public long[] getArray() throws NullPointerException { // Getter
         return array;
     }
 
-    public int getnElems() {
+    public int getnElems() throws NullPointerException {
         return nElems;
     } // Getter
 }

@@ -17,14 +17,14 @@ public class BubbleAlgoArray {
         nElems++; // Increase in size
     }
 
-    public void display() // Outputting the contents of an array
+    public void display() throws NullPointerException // Outputting the contents of an array
     {
         for(int j=0; j<nElems; j++) // For each item
             System.out.print(array[j] + " "); // actual display
         System.out.println("");
     }
 
-    public void bubbleSort() // Bubble sort method with array of elements
+    public void bubbleSort() throws NullPointerException // Bubble sort method with array of elements
     {
         int out, in;
         for(out=nElems-1; out>1; out--) // External cycle (reverse)
@@ -40,11 +40,11 @@ public class BubbleAlgoArray {
         array[two] = temp;
     }
 
-    public long[] getArray() {
+    public long[] getArray() throws NullPointerException {
         return array;
     } // Getter of Array
 
-    public int getnElems() {
+    public int getnElems() throws NullPointerException {
         return nElems;
     } // Getter of size
 }

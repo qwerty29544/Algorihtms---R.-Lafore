@@ -91,4 +91,23 @@ public class OrderedArrayClassTest {
         System.out.println("will not print it");
     }
 
+    @Test(expected = NullPointerException.class)
+    public void displayException() {
+        this.orderedArray = null;
+        this.orderedArray.display();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getArrayException() {
+        this.orderedArray = null;
+        this.orderedArray.getArray();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getnElemsException() {
+        this.orderedArray = null;
+        this.orderedArray.getnElems();
+    }
+
+
 }

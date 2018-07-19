@@ -141,4 +141,74 @@ public class DequeTest {
         assertEquals(this.deque.getRear(),0);
     }
 
+    @Test(expected = NullPointerException.class)
+    public void getRearException() {
+        this.deque = null;
+        this.deque.getRear();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getFrontException() {
+        this.deque = null;
+        this.deque.getFront();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getQueArrayException() {
+        this.deque = null;
+        this.deque.getQueArray();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getMaxSizeException() {
+        this.deque = null;
+        this.deque.getMaxSize();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void sizeException() {
+        this.deque = null;
+        this.deque.size();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void isFullException() {
+        this.deque = null;
+        this.deque.isFull();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void isEmptyException() {
+        this.deque = null;
+        this.deque.isEmpty();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void peekRearException() {
+        this.deque = null;
+        this.deque.peekRear();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void peekFrontException() {
+        this.deque = null;
+        this.deque.peekFront();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void removeRightException() {
+        this.deque = null;
+        this.deque.removeRight();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void removeLeftException() {
+        this.deque = null;
+        this.deque.removeLeft();
+    }
+
+
+
+
+
 }

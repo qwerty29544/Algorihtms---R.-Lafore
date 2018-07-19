@@ -12,22 +12,22 @@ public class DataClass {
         age = Math.abs(a);
     }
 
-    public void displayPerson()
+    public void displayPerson() throws  NullPointerException
     {
         System.out.print(" Last name: " + lastName);
         System.out.print(", First name: " + firstName);
         System.out.println(", Age: " + age);
     }
 
-    public String getLast()
+    public String getLast() throws NullPointerException
     { return lastName; }
 
 
-    public String getFirstName() {
+    public String getFirstName() throws NullPointerException {
         return firstName;
     }
 
-    public int getAge() {
+    public int getAge() throws  NullPointerException {
         return age;
     }
 }

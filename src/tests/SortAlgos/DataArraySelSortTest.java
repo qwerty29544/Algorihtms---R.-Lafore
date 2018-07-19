@@ -78,4 +78,28 @@ public class DataArraySelSortTest {
         assertEquals(this.dataArrayClass.getnElems(),4);
     }
 
+    @Test(expected = NullPointerException.class)
+    public void getClassArrayException() {
+        this.dataArrayClass = null;
+        this.dataArrayClass.getClassArray();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getnElemsException() {
+        this.dataArrayClass = null;
+        this.dataArrayClass.getnElems();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void insertionSortException() {
+        this.dataArrayClass = null;
+        this.dataArrayClass.insertionSort();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void displayException() {
+        this.dataArrayClass = null;
+        this.dataArrayClass.display();
+    }
+
 }

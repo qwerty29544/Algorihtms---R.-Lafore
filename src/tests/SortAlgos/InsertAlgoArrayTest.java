@@ -83,4 +83,28 @@ public class InsertAlgoArrayTest {
         assertEquals(this.algoArray.getnElems(),5);
     }
 
+    @Test(expected = NullPointerException.class)
+    public void getArrayException() {
+        this.algoArray = null;
+        this.algoArray.getArray();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getnElemsException() {
+        this.algoArray = null;
+        this.algoArray.getnElems();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void insertionSortException() {
+        this.algoArray = null;
+        this.algoArray.insertionSort();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void displayException() {
+        this.algoArray = null;
+        this.algoArray.display();
+    }
+
 }

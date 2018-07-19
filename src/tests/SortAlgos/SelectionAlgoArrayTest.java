@@ -78,4 +78,28 @@ public class SelectionAlgoArrayTest {
         assertEquals(this.selArray.getnElems(),4);
     }
 
+    @Test(expected = NullPointerException.class)
+    public void getArrayException() {
+        this.selArray = null;
+        this.selArray.getArray();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getnElemsException() {
+        this.selArray = null;
+        this.selArray.getnElems();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void selectionSortException() {
+        this.selArray = null;
+        this.selArray.selectionSort();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void displayException() {
+        this.selArray = null;
+        this.selArray.display();
+    }
+
 }

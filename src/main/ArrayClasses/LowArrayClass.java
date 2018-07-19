@@ -16,7 +16,7 @@ public class LowArrayClass {
     public long getElem(int index) throws IllegalArgumentException
     { return array[index]; }
 
-    public long[] getArray() {
+    public long[] getArray() throws NullPointerException {
         return array;
     }
 }

@@ -68,4 +68,28 @@ public class BubbleAlgoArrayTest {
             this.bubble.insert(i);
         }
     }
+
+    @Test(expected = NullPointerException.class)
+    public void getArrayException() {
+        this.bubble = null;
+        this.bubble.getArray();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getnElemsException() {
+        this.bubble = null;
+        this.bubble.getnElems();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void bubbleSortException() {
+        this.bubble = null;
+        this.bubble.bubbleSort();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void displayException() {
+        this.bubble = null;
+        this.bubble.display();
+    }
 }

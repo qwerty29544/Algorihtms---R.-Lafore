@@ -20,14 +20,14 @@ public class DataArraySelSort {
         nElems++; // Increase the size
     }
 
-    public void display() // Output the contents of the array
+    public void display() throws NullPointerException // Output the contents of the array
     {
         for(int j=0; j<nElems; j++) // For each element
             classArray[j].displayPerson(); // Output
         System.out.println("");
     }
 
-    public void insertionSort() // Sort method
+    public void insertionSort() throws NullPointerException // Sort method
     {
         int in, out;
         for(out=1; out<nElems; out++) // out - separating marker
@@ -43,11 +43,11 @@ public class DataArraySelSort {
         }
     }
 
-    public DataClass[] getClassArray() {
+    public DataClass[] getClassArray() throws NullPointerException {
         return classArray;
     } // Getter
 
-    public int getnElems() {
+    public int getnElems() throws NullPointerException {
         return nElems;
     } // Getter
 }

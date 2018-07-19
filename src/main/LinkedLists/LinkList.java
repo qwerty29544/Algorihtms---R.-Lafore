@@ -8,35 +8,39 @@ public class LinkList {
         first = null; // The list does not yet contain elements
     }
 
-    public boolean isEmpty() // true if the list is empty
+    public boolean isEmpty() throws NullPointerException// true if the list is empty
     {
         return (first==null);
     }
 
 //
-    public void insertFirst(int id, double dd)
-    { // Создание нового элемента
+    public void insertFirst(int id, double dd) throws IllegalArgumentException
+    { // Create a new item
         Link newLink = new Link(id, dd);
-        newLink.next = first; // newLink --> старое значение first
+        newLink.next = first; // newLink --> old value first
         first = newLink; // first --> newLink
     }
 
-    public Link deleteFirst() // Удаление первого элемента
-    { // (предполагается, что список не пуст)
-        Link temp = first; // Сохранение ссылки
-        first = first.next; // Удаление: first-->ссылка на второй элемент
-        return temp; // Метод возвращает ссылку
-    } // на удаленный элемент
+    public Link deleteFirst() throws NullPointerException // Deleting the first item
+    { // (it is assumed that the list is not empty)
+        Link temp = first; // Save link
+        first = first.next; // Deletion: first --> reference to the second element
+        return temp; // The method returns a reference
+    } // to the deleted item
 
-    public void displayList()
+    public void displayList() throws NullPointerException
     {
         System.out.print("List (first-->last): ");
-        Link current = first; // От начала списка
-        while(current != null) // Перемещение до конца списка
+        Link current = first; // From the beginning of the list
+        while(current != null) // Move to the end of the list
         {
-            current.displayLink(); // Вывод данных
-            current = current.next; // Переход к следующему элементу
+            current.displayLink(); // Data output
+            current = current.next; // Go to the next item
         }
         System.out.println("");
+    }
+
+    public Link getFirst() throws NullPointerException {
+        return first;
     }
 }

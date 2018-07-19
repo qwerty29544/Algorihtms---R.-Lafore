@@ -45,18 +45,18 @@ public class HighArrayClass {
         }
     }
 
-    public void display()
+    public void display() throws NullPointerException
     {
         for(int j=0; j<nElems; j++)
             System.out.print(array[j] + " ");
         System.out.println("");
     }
 
-    public long[] getArray() {
+    public long[] getArray() throws NullPointerException {
         return array;
     }
 
-    public int getnElems() {
+    public int getnElems() throws NullPointerException {
         return nElems;
     }
 }

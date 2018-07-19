@@ -17,35 +17,35 @@ public class StackArrayClass {
         stackArray[++top] = j; // Increase top, insert an element
     }
 
-    public long pop() // Extracting an element from the top of the stack
+    public long pop() throws NullPointerException // Extracting an element from the top of the stack
     {
         return stackArray[top--]; // Extracting an element, reducing top
     }
 
-    public long peek() // Reading an element from the top of the stack
+    public long peek() throws NullPointerException // Reading an element from the top of the stack
     {
         return stackArray[top];
     }
 
-    public boolean isEmpty() // True, if the stack is empty
+    public boolean isEmpty() throws NullPointerException // True, if the stack is empty
     {
         return (top == -1);
     }
 
-    public boolean isFull() // True, if the stack is full
+    public boolean isFull() throws NullPointerException // True, if the stack is full
     {
         return (top == maxSize-1);
     }
 
-    public int getMaxSize() { // Getter
+    public int getMaxSize() throws NullPointerException { // Getter
         return maxSize;
     }
 
-    public long[] getStackArray() { // Getter
+    public long[] getStackArray() throws NullPointerException { // Getter
         return stackArray;
     }
 
-    public int getTop() { // Getter
+    public int getTop() throws NullPointerException { // Getter
         return top;
     }
 }

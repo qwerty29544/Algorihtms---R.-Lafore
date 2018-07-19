@@ -109,4 +109,46 @@ public class StackArrayClassTest {
         assertEquals(this.stack.getTop(),3);
     }
 
+    @Test(expected = NullPointerException.class)
+    public void popException() {
+        this.stack = null;
+        this.stack.pop();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void peekException() {
+        this.stack = null;
+        this.stack.peek();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getTopException() {
+        this.stack = null;
+        this.stack.getTop();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getStackArrayException() {
+        this.stack = null;
+        this.stack.getStackArray();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getMaxSizeException() {
+        this.stack = null;
+        this.stack.getMaxSize();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void isFullException() {
+        this.stack = null;
+        this.stack.isFull();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void isEmptyException() {
+        this.stack = null;
+        this.stack.isEmpty();
+    }
+
 }

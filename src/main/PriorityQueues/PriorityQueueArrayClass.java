@@ -33,27 +33,27 @@ public class PriorityQueueArrayClass {
         }
     }
 
-    public long remove() // Extract minimum element
+    public long remove() throws NullPointerException // Extract minimum element
     { return queArray[--nItems]; }
 
-    public long peekMin() // Read the minimum element
+    public long peekMin() throws NullPointerException // Read the minimum element
     { return queArray[nItems-1]; }
 
-    public boolean isEmpty() // true if the queue is empty
+    public boolean isEmpty() throws NullPointerException // true if the queue is empty
     { return (nItems==0); }
 
-    public boolean isFull() // true if the queue is full
+    public boolean isFull() throws NullPointerException // true if the queue is full
     { return (nItems == maxSize); }
 
-    public int getMaxSize() { //Getter
+    public int getMaxSize() throws NullPointerException { //Getter
         return maxSize;
     }
 
-    public long[] getQueArray() { // Getter
+    public long[] getQueArray() throws NullPointerException { // Getter
         return queArray;
     }
 
-    public int getnItems() { // Getter
+    public int getnItems() throws NullPointerException { // Getter
         return nItems;
     }
 }

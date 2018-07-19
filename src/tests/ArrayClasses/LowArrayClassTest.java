@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.*;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNull;
 
 public class LowArrayClassTest {
 
@@ -59,5 +60,11 @@ public class LowArrayClassTest {
     @Test
     public void ignoredTest() {
         System.out.println("will not print it");
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getArrayException() {
+        this.lowArray = null;
+        assertNull(this.lowArray.getArray());
     }
 }

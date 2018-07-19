@@ -118,4 +118,58 @@ public class QueueArrayClassTest{
         assertEquals(this.queueArray.getRear(),3);
     }
 
+    @Test(expected = NullPointerException.class)
+    public void getRearException() {
+        this.queueArray = null;
+        this.queueArray.getRear();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void peekFrontException() {
+        this.queueArray = null;
+        this.queueArray.peekFront();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getFrontException() {
+        this.queueArray = null;
+        this.queueArray.getFront();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getQueArrayException() {
+        this.queueArray = null;
+        this.queueArray.getQueArray();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getMaxSizeException() {
+        this.queueArray = null;
+        this.queueArray.getMaxSize();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void isFullException() {
+        this.queueArray = null;
+        this.queueArray.isFull();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void isEmptyException() {
+        this.queueArray = null;
+        this.queueArray.isEmpty();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void sizeException() {
+        this.queueArray = null;
+        this.queueArray.size();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void removeException() {
+        this.queueArray = null;
+        this.queueArray.remove();
+    }
+
 }

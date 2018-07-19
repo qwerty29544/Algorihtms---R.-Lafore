@@ -90,4 +90,22 @@ public class HighArrayClassTest {
         System.out.println("will not print it");
     }
 
+    @Test(expected = NullPointerException.class)
+    public void displayException() {
+        this.highArray = null;
+        this.highArray.display();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getArrayException() {
+        this.highArray = null;
+        assertNull(this.highArray.getArray());
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getnElemsException() {
+        this.highArray = null;
+        assertNull(this.highArray.getnElems());
+    }
+
 }

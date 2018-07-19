@@ -46,17 +46,17 @@ public class DataArrayClass {
         }
     }
 
-    public void displayA()
+    public void displayA() throws NullPointerException
     {
         for(int j=0; j<nElems; j++)
             classArray[j].displayPerson();
     }
 
-    public DataClass[] getClassArray() {
+    public DataClass[] getClassArray() throws NullPointerException {
         return classArray;
     }
 
-    public int getnElems() {
+    public int getnElems() throws NullPointerException {
         return nElems;
     }
 }

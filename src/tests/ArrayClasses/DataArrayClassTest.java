@@ -70,6 +70,12 @@ public class DataArrayClassTest {
         this.dataArrayClass.displayA();
     }
 
+    @Test(expected = NullPointerException.class)
+    public void displayException(){
+        this.dataArrayClass = null;
+        this.dataArrayClass.displayA();
+    }
+
     @Test
     public void getClassArray() throws Exception {
         this.dataClassTest = this.dataArrayClass.getClassArray();
@@ -82,5 +88,19 @@ public class DataArrayClassTest {
     public void getnElems() throws Exception {
         assertEquals(this.dataArrayClass.getnElems(),2);
     }
+
+    @Test(expected = NullPointerException.class)
+    public void getArrayException() {
+        this.dataArrayClass = null;
+        this.dataArrayClass.getClassArray();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getnElemsException() {
+        this.dataArrayClass = null;
+        this.dataArrayClass.getnElems();
+    }
+
+
 
 }
