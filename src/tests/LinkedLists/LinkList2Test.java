@@ -61,6 +61,17 @@ public class LinkList2Test {
         assertEquals(this.linkList.find(-34),this.link);
         this.linkList.delete(-34);
         assertNull(this.linkList.find(-34));
+        this.linkList.delete(10);
+        assertNull(this.linkList.find(10));
+        assertNotNull(this.linkList.find(2));
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void deleteOutOfElementsException() {
+        this.linkList.delete(-34);
+        this.linkList.delete(10);
+        this.linkList.delete(2);
+        assertNull(this.linkList.find(39123));
     }
 
     @Test

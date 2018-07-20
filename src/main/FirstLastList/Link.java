@@ -1,8 +1,8 @@
 package FirstLastList;
 
 public class Link {
-    public long dData; // Данные
-    public Link next; // Следующий элемент в списке
+    protected long dData; // Данные
+    protected Link next; // Следующий элемент в списке
 
     public Link(long d) throws IllegalArgumentException // Конструктор
     { dData = d; }

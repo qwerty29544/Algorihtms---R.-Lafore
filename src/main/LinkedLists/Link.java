@@ -1,9 +1,9 @@
 package LinkedLists;
 
 public class Link {
-    public int iData; // Data (key)
-    public double dData; // Data
-    public Link next; // The next item in the list
+    protected int iData; // Data (key)
+    protected double dData; // Data
+    protected Link next; // The next item in the list
 
     public Link(int id, double dd) throws IllegalArgumentException // Constructor
     {
