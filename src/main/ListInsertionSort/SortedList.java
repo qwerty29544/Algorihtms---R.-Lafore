@@ -6,7 +6,7 @@ public class SortedList {
     public SortedList() // Constructor (no arguments)
     { first = null; } // Initializing the list
 
-    public SortedList(Link[] linkArr) throws IllegalArgumentException // Constructor (argument is an array)
+    public SortedList(Link[] linkArr) throws IllegalArgumentException, NullPointerException // Constructor (argument is an array)
     { //
         first = null; // Initializing the list
         for(int j=0; j<linkArr.length; j++) // Copying an array
