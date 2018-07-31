@@ -31,7 +31,7 @@ public class qSortAlgo1 {
 
     private void recQuickSort(int left, int right) throws NullPointerException, IllegalArgumentException
     {
-        if(right-left <= 0) // If the size is <= 1, the array is sorted
+        if(right-left <= 0) // If the size is <= 112, the array is sorted
             return;
         else // For size 2 and more
         {
