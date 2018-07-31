@@ -1,4 +1,4 @@
-package CalcPower;
+package CalcPowerNotAclass;
 
 import java.io.*;
 
