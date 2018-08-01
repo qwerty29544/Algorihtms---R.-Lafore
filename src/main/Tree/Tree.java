@@ -126,7 +126,6 @@ public class Tree {
                 parent.leftChild = null; // The node is disconnected from the parent
             else
                 parent.rightChild = null;
-            return true;
         }
         // If there is no right child, the node is replaced with the left subtree
         else if (current.rightChild == null) {
@@ -136,7 +135,6 @@ public class Tree {
                 parent.leftChild = current.leftChild;
             else
                 parent.rightChild = current.leftChild;
-            return true;
         }
         // If there is no left child, the node is replaced with the right subtree
         else if (current.leftChild == null) {
@@ -146,22 +144,28 @@ public class Tree {
                 parent.leftChild = current.rightChild;
             else
                 parent.rightChild = current.rightChild;
-            return true;
         }
         else // Two descendants, the node is replaced by a successor
         {
             // Find the successor for the node being deleted (current)
             Node successor = getSuccessor(current);
             // The current parent contacts the middleman
-            if (current == root)
+            if (current == root) {
+                successor.leftChild = root.leftChild;
                 root = successor;
-            else if (isLeftChild)
+            }
+            else if (isLeftChild) {
+                successor.leftChild = current.leftChild;
                 parent.leftChild = successor;
-            else
+            }
+            else {
+                successor.leftChild = current.leftChild;
                 parent.rightChild = successor;
+            }
             // The successor binds to the left child of current
             return true; // A sign of successful completion
         }
+        return true;
     }
 
     // The method returns a node with the next value after the delNode.
