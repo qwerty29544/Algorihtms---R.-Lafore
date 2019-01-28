@@ -45,10 +45,11 @@ public class NodeTest {
         assertEquals(this.node.getChild(1),this.nodeTest);
     }
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void connectChildExceptionProbably() throws Exception {
         this.node.connectChild(1,this.node3);
         assertNull(this.node.getChild(1));
+        this.nodeException.connectChild(1,this.node);
     }
 
     @Test
@@ -66,6 +67,11 @@ public class NodeTest {
         assertNull(this.node.getChild(2));
     }
 
+    @Test(expected = NullPointerException.class)
+    public void disconnectChildException() {
+        this.nodeException.disconnectChild(1);
+    }
+
     @Test
     public void getChild() throws Exception {
         assertNotNull(this.node.getChild(0));
@@ -81,9 +87,10 @@ public class NodeTest {
         assertEquals(this.node.getChild(1),this.node3);
     }
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void getChildExceptionPRB() throws Exception {
         this.node3 = this.node.getChild(3);
+        this.nodeException.getChild(2);
     }
 
     @Test
@@ -145,34 +152,116 @@ public class NodeTest {
 
     @Test
     public void getItem() throws Exception {
+        assertEquals(this.node.getItem(0).getdData(),this.item2.getdData());
+        assertEquals(this.node.getItem(1).getdData(),this.item.getdData());
+        this.node.removeItem();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getItemException() {
+        assertEquals(this.node.getItem(1).getdData(),this.item.getdData());
+        this.node.removeItem();
+        assertEquals(this.node.getItem(1).getdData(),0);
     }
 
     @Test
     public void isFull() throws Exception {
+        assertEquals(this.node.isFull(),false);
+        this.node.insertItem(this.item3);
+        assertEquals(this.node.isFull(),true);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void isFullException() {
+        assertEquals(this.nodeException.isFull(),true);
     }
 
     @Test
     public void findItem() throws Exception {
+        assertEquals(this.node.findItem(234),1);
+        assertEquals(this.node.findItem(this.item2.getdData()),0);
+        assertEquals(this.node.findItem(-120),-1);
+        assertEquals(this.node.findItem(222),-1);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void findItemException() {
+        assertEquals(this.nodeException.findItem(123),-1);
     }
 
     @Test
     public void insertItem() throws Exception {
+        assertEquals(this.node.isFull(),false);
+        this.node.insertItem(this.item3);
+        assertEquals(this.node.isFull(),true);
+        assertEquals(this.node.findItem(this.item3.getdData()),0);
+        assertEquals(this.node.getItem(0),this.item3);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void insertItemException() {
+        this.nodeException.insertItem(this.item3);
     }
 
     @Test
     public void removeItem() throws Exception {
+        assertEquals(this.node.isFull(),false);
+        this.node.insertItem(this.item3);
+        assertEquals(this.node.isFull(),true);
+        assertEquals(this.node.findItem(this.item2.getdData()),1);
+        assertEquals(this.node.findItem(this.item.getdData()),2);
+        this.node.removeItem();
+        this.node.removeItem();
+        assertEquals(this.node.isFull(),false);
+        assertEquals(this.node.findItem(this.item.getdData()),-1);
+        assertEquals(this.node.findItem(this.item2.getdData()),-1);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void removeItemException() {
+        this.nodeException.removeItem();
     }
 
     @Test
     public void displayNode() throws Exception {
+        this.node.displayNode();
+        this.node.insertItem(this.item3);
+        this.node.displayNode();
+        this.node.removeItem();
+        this.node.removeItem();
+        this.node.removeItem();
+        this.node.displayNode();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void displayNodeException() {
+        this.nodeException.displayNode();
     }
 
     @Test
     public void getChildArray() throws Exception {
+        Node[] nodeArray = this.node.getChildArray();
+        assertEquals(nodeArray[0].isFull(),false);
+        assertEquals(nodeArray[0].findItem(this.item2.getdData()),0);
+        assertNull(this.node.getChildArray()[1]);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getChildArrayException() {
+        assertNull(this.nodeException.getChildArray());
     }
 
     @Test
     public void getItemArray() throws Exception {
+        DataItem[] items = this.node.getItemArray();
+        assertEquals(items[1].getdData(),this.item.getdData());
+        assertEquals(items[0].getdData(),this.item2.getdData());
+        assertNull(items[2]);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getItemArrayException() {
+        this.nodeException.getItemArray();
     }
 
 }
