@@ -1,6 +1,6 @@
 package LinkedLists;
 
-import com.sun.istack.internal.localization.NullLocalizable;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
