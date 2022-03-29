@@ -1,2 +1,2 @@
 # Algorihtms---R.-Lafore
-Robert Lafore's "Data Structures &amp; Algorythms in Java" cookbook
+Robert Lafore's "Data Structures &amp; Algorithms in Java" cookbook
